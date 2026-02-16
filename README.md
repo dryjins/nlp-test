@@ -47,14 +47,16 @@ Create a simple **Learnable Projector**.
 The loss function is the mechanism that enforces interpretability. It consists of two parts:
 
 $$ L_{total} = L_{align} + \lambda L_{ortho} $$
+$$ z_{diff} = \text{Encoder}(a) - \text{Encoder}(b) $$
+$$ L_{gender} = 1 - \text{CosineSimilarity}(z_{diff}, [1, 0, 0]) $$
 
 1.  **Alignment Loss ($L_{align}$):**
-    For every pair $(a, b)$ in the Gender set:
-    $$ z_{diff} = \text{Encoder}(a) - \text{Encoder}(b) $$
-    $$ L_{gender} = 1 - \text{CosineSimilarity}(z_{diff}, [1, 0, 0]) $$
-    *(Forces gender difference to lie on the X-axis)*
+    For every pair $(a, b)$ in the Gender set, calculate the difference in the projected space $z_{diff}$.
+    Then, maximize the cosine similarity with the target axis (e.g., X-axis for gender) $L_{gender}$.
 
-2.  **Orthogonality/Reconstruction (Optional but recommended):**
+    *(This forces the gender difference vector to align parallel to the X-axis)*
+
+3.  **Orthogonality/Reconstruction (Optional but recommended):**
     Ensure the learned axes are not correlated (e.g., Gender and Royalty should be independent).
 
 ---
