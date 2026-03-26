@@ -1,0 +1,9 @@
+model: film_gamma_beta
+input_dim: 300
+condition_dim: 3
+output_dim: 3
+
+lr: 1.0e-3
+num_epochs: 1500
+lambda_ortho: 0.1
+batch_size: 32
