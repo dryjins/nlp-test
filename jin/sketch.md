@@ -29,7 +29,7 @@ To erect a discrete lattice upon a continuous manifold, we introduce MINA, a pro
 
 The invariant axes serve as the rigid conceptual skeleton. We define the Voronoi cell centers strictly within this invariant subspace, forcing them to act as the exact "Intents" for FCA. The factorization is enforced via the following objective functions:
 
-$$[L_{inv} = \mathbb{E}_{x,g} \left[ || u_I(x) - u_I(g(x)) ||^2 \right]]$$
+$$\[L_{inv} = \mathbb{E}_{x,g} \left[ || u_I(x) - u_I(g(x)) ||^2 \right]\]$$
 
 $$[L_{var} = \mathbb{E}_{x,g} \left[ || u_V(g(x)) - G_V u_V(x) ||^2 \right]]$$
 
