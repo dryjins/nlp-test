@@ -31,7 +31,7 @@ The invariant axes serve as the rigid conceptual skeleton. We define the Voronoi
 
 $$L_{inv} = \mathbb{E}_{x,g} \left[ || u_I(x) - u_I(g(x)) ||^2 \right]$$
 
-$$[L_{var} = \mathbb{E}_{x,g} \left[ || u_V(g(x)) - G_V u_V(x) ||^2 \right]]$$
+$$L_{var} = \mathbb{E}_{x,g} \left[ || u_V(g(x)) - G_V u_V(x) ||^2 \right]$$
 
 where $$ g $$ represents a translation transformation, $$ u_I $$ and $$ u_V $$ are the projected invariant and variant coordinates, and $$G_V$$ is the linear operator approximating the group action in the variant space. By explicitly minimizing the covariance between axes (Decorrelation), MINA ensures that the extracted invariant axes are geometrically orthogonal and semantically independent.
 
@@ -39,9 +39,9 @@ where $$ g $$ represents a translation transformation, $$ u_I $$ and $$ u_V $$ a
 Because the underlying embedding space is a Riemannian manifold with global curvature, classical fuzzy logic based on Euclidean distance fails to measure the true membership between a word and an FCA Intent. To bridge this gap, we propose Geodesic Fuzzy Mapping.
 Instead of using a binary $$ 1/0 $$ threshold or Euclidean cosine similarity, the probability that a concept belongs to a specific Voronoi cell (Intent) is modeled as a least-action transition probability along the manifold's surface. We define the transition kernel $$P_{ij}$$ as:
 
-$$[P_{ij} = \frac{\exp(-d_M(h_i, h_j) / \tau)}{\sum_k \exp(-d_M(h_i, h_k) / \tau)}]$$
+$$P_{ij} = \frac{\exp(-d_M(h_i, h_j) / \tau)}{\sum_k \exp(-d_M(h_i, h_k) / \tau)}$$
 
-where $$ d_M(h_i, h_j) $$ is the geodesic distance on the manifold $$M$$, $$h_i$$ is the current state, $$h_j$$ is the target Voronoi center, and $$\tau$$ is the temperature parameter.
+where $$d_M(h_i, h_j)$$ is the geodesic distance on the manifold $$M$$, $$h_i$$ is the current state, $$h_j$$ is the target Voronoi center, and $$\tau$$ is the temperature parameter.
 This Boltzmann-normalized kernel transforms geodesic distances into soft, fuzzy membership scores. It allows the model to treat local variations within a cell as linear, while respecting the non-linear, global curvature required to perform a valid $$\min$$ (Join) jump to a parent concept cell.
 
 ## 5. Conclusion
