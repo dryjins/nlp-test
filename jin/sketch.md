@@ -33,7 +33,7 @@ $$L_{inv} = \mathbb{E}_{x,g} \left[ || u_I(x) - u_I(g(x)) ||^2 \right]$$
 
 $$L_{var} = \mathbb{E}_{x,g} \left[ || u_V(g(x)) - G_V u_V(x) ||^2 \right]$$
 
-where $$ g $$ represents a translation transformation, $$ u_I $$ and $$ u_V $$ are the projected invariant and variant coordinates, and $$G_V$$ is the linear operator approximating the group action in the variant space. By explicitly minimizing the covariance between axes (Decorrelation), MINA ensures that the extracted invariant axes are geometrically orthogonal and semantically independent.
+where $$g$$ represents a translation transformation, $$u_I$$ and $$u_V$$ are the projected invariant and variant coordinates, and $$G_V$$ is the linear operator approximating the group action in the variant space. By explicitly minimizing the covariance between axes (Decorrelation), MINA ensures that the extracted invariant axes are geometrically orthogonal and semantically independent.
 
 ## 4. Method 2: Geodesic Fuzzy FCA on Riemannian Manifolds
 Because the underlying embedding space is a Riemannian manifold with global curvature, classical fuzzy logic based on Euclidean distance fails to measure the true membership between a word and an FCA Intent. To bridge this gap, we propose Geodesic Fuzzy Mapping.
